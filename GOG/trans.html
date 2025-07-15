@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transformations and Animations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      background-color: #4caf50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 10px;
+      perspective: 800px;
+    }
+
+    /* ---------- Transformations ---------- */
+    .translate {
+      transform: translate(50px, 20px);
+    }
+
+    .rotate {
+      transform: rotate(45deg);
+    }
+
+    .scale {
+      transform: scale(1.5);
+    }
+
+    .skew {
+      transform: skew(20deg, 10deg);
+    }
+
+    .matrix {
+      transform: matrix(1, 0.3, 0.2, 1, 30, 20);
+    }
+
+    .rotate3d {
+      transform: rotate3d(1, 1, 0, 45deg);
+      transform-style: preserve-3d;
+    }
+
+    /* ---------- Keyframes Animations ---------- */
+    @keyframes colorChange {
+      0%   { background-color: #4caf50; transform: translateX(0); }
+      50%  { background-color: #ff9800; transform: translateX(100px); }
+      100% { background-color: #2196f3; transform: translateX(0); }
+    }
+
+    .animation-box {
+      animation-name: colorChange;
+      animation-duration: 4s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    }
+
+    /* Pause/Play on Hover */
+    .animation-box:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+
+    /* -------- Layout -------- */
+    section {
+      margin-top: 40px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .label {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Transformations & Animations Demo</h1>
+
+  <!-- Transform Section -->
+  <section>
+    <h2>2D & 3D Transformations</h2>
+    <div class="row">
+      <div>
+        <div class="box translate">Translate</div>
+        <div class="label">translate(50px, 20px)</div>
+      </div>
+      <div>
+        <div class="box rotate">Rotate</div>
+        <div class="label">rotate(45deg)</div>
+      </div>
+      <div>
+        <div class="box scale">Scale</div>
+        <div class="label">scale(1.5)</div>
+      </div>
+      <div>
+        <div class="box skew">Skew</div>
+        <div class="label">skew(20deg, 10deg)</div>
+      </div>
+      <div>
+        <div class="box matrix">Matrix</div>
+        <div class="label">matrix(1,0.3,0.2,1,30,20)</div>
+      </div>
+      <div>
+        <div class="box rotate3d">3D Rotate</div>
+        <div class="label">rotate3d(1,1,0,45deg)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animation Section -->
+  <section>
+    <h2>Full Animation Example</h2>
+    <div class="box animation-box">Hover Me</div>
+    <p class="label">
+      All animation properties applied:<br>
+      <code>animation: colorChange 4s ease-in-out 1s infinite alternate both</code>
+    </p>
+    <p class="label"><strong>Tip:</strong> Hover to pause animation</p>
+  </section>
+
+</body>
+</html>

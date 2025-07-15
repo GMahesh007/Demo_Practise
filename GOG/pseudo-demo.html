@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Pseudo-Classes and Pseudo-Elements</title>
+  <style>
+    /* Section headings */
+    h1, h2 {
+      color: green;
+      text-align: center;
+    }
+
+    /* Shared box style */
+    .box {
+      background-color: yellow;
+      width: 300px;
+      height: 100px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 100px;
+      border: 1px solid black;
+    }
+
+    /* :hover - when mouse hovers */
+    .box:hover {
+      background-color: orange;
+    }
+
+    /* :active - when element is clicked */
+    .box:active {
+      background-color: tomato;
+    }
+
+    /* :focus - when input is focused */
+    input:focus {
+      background-color: lightgray;
+    }
+
+    /* :visited - after link is visited */
+    a:visited {
+      color: red;
+    }
+
+    /* ::first-line - style first line of paragraph */
+    .first-line-demo::first-line {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* ::first-letter - style first letter */
+    .first-letter-demo::first-letter {
+      color: red;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    /* ::before - add content before */
+    .before-demo::before {
+      content: '"';
+      color: red;
+      font-size: 24px;
+    }
+
+    /* ::after - add content after */
+    .after-demo::after {
+      content: '"';
+      color: red;
+      font-size: 24px;
+    }
+
+    /* ::marker - style bullet or number in list */
+    li::marker {
+      color: red;
+      font-size: 24px;
+    }
+
+    /* ::selection - style text selection */
+    p::selection {
+      background-color: green;
+      color: white;
+    }
+
+    span::selection {
+      background-color: red;
+      color: green;
+    }
+
+    /* Layout helpers */
+    .section {
+      padding: 20px;
+      border-bottom: 2px solid #ccc;
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>GeeksforGeeks - CSS Pseudo-Classes & Elements</h1>
+
+  <!-- Section: :hover and :active -->
+  <div class="section">
+    <h2>:hover and :active</h2>
+    <div class="box">Hover or Click Me</div>
+  </div>
+
+  <!-- Section: :focus -->
+  <div class="section">
+    <h2>:focus (on input fields)</h2>
+    <form>
+      <input type="text" placeholder="Username">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+    </form>
+  </div>
+
+  <!-- Section: :visited -->
+  <div class="section">
+    <h2>:visited</h2>
+    <p>
+      <a href="https://www.geeksforgeeks.org/" target="_blank">
+        Visit GFG - Link color changes after visit
+      </a>
+    </p>
+  </div>
+
+  <!-- Section: ::first-line -->
+  <div class="section">
+    <h2>::first-line</h2>
+    <p class="first-line-demo">
+      This is a paragraph using first-line pseudo-element.
+      Only the first line of this paragraph is styled red and bold.
+    </p>
+  </div>
+
+  <!-- Section: ::first-letter -->
+  <div class="section">
+    <h2>::first-letter</h2>
+    <p class="first-letter-demo">
+      This paragraph uses first-letter to make the first letter large and red.
+    </p>
+  </div>
+
+  <!-- Section: ::before -->
+  <div class="section">
+    <h2>::before</h2>
+    <p class="before-demo">
+      This text has a red quotation mark before it using ::before.
+    </p>
+  </div>
+
+  <!-- Section: ::after -->
+  <div class="section">
+    <h2>::after</h2>
+    <p class="after-demo">
+      This text has a red quotation mark after it using ::after.
+    </p>
+  </div>
+
+  <!-- Section: ::marker -->
+  <div class="section">
+    <h2>::marker</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </div>
+
+  <!-- Section: ::selection -->
+  <div class="section">
+    <h2>::selection</h2>
+    <p>Select this paragraph to see the ::selection effect.</p>
+    <span>This span will show a different selection effect.</span>
+  </div>
+
+</body>
+</html>

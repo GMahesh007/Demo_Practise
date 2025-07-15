@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Position Examples</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0 20px;
+      background: #f0f0f0;
+    }
+
+    .section {
+      margin: 100px 0;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      color: #007b5e;
+    }
+
+    .box {
+      background: #007b5e;
+      color: white;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    /* Fixed */
+    .fixed-box {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: red;
+      z-index: 1000;
+    }
+
+    /* Static */
+    .static-box {
+      position: static;
+    }
+
+    /* Relative */
+    .relative-box {
+      position: relative;
+      top: 30px;
+      left: 20px;
+      background: teal;
+    }
+
+    /* Absolute */
+    .relative-container {
+      position: relative;
+      height: 200px;
+      border: 1px dashed #888;
+      margin-top: 10px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: purple;
+    }
+
+    /* Sticky */
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: orange;
+    }
+
+    /* Spacer for scrolling */
+    .spacer {
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fixed-box">Fixed (always visible)</div>
+
+  <div class="section">
+    <h2>1. Static</h2>
+    <div class="box static-box">This box is <strong>static</strong> (default flow)</div>
+  </div>
+
+  <div class="section">
+    <h2>2. Relative</h2>
+    <div class="box relative-box">This box is <strong>relative</strong> (offset from normal spot)</div>
+  </div>
+
+  <div class="section">
+    <h2>3. Absolute inside Relative</h2>
+    <div class="relative-container">
+      <div class="box absolute-box">This box is <strong>absolute</strong></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Sticky</h2>
+    <div class="box sticky-box">This box is <strong>sticky</strong> (sticks when you scroll)</div>
+    <div class="spacer"></div>
+  </div>
+
+</body>
+</html>

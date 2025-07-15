@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Concepts Demo</title>
+  <style>
+    /* === BASIC SELECTORS === */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #009900;
+    }
+
+    #intro {
+      color: navy;
+      background: lightyellow;
+      padding: 10px;
+    }
+
+    .section {
+      margin-top: 30px;
+      border: 2px dashed #ccc;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    /* === COLOR SYSTEM === */
+    .color-boxes div {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .named-color { background-color: tomato; }
+    .hex-color { background-color: #3498db; }
+    .rgb-color { background-color: rgb(60, 179, 113); }
+    .rgba-color { background-color: rgba(255, 165, 0, 0.8); }
+    .hsl-color { background-color: hsl(280, 60%, 50%); }
+
+    /* === BACKGROUND PROPERTIES === */
+    .background-example {
+      height: 200px;
+      color: white;
+      background-image: url('https://via.placeholder.com/600x200');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: scroll;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === FLEXBOX === */
+    .flex-container {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .flex-item {
+      background-color: #8e44ad;
+      color: white;
+      padding: 20px;
+      flex: 1;
+      text-align: center;
+    }
+
+    /* === GRID === */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .grid-item {
+      background-color: #27ae60;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* === PSEUDO CLASSES & ELEMENTS === */
+    a:hover {
+      color: red;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    p::first-letter {
+      font-size: 200%;
+      color: red;
+    }
+
+    p::selection {
+      background: black;
+      color: white;
+    }
+
+    /* === STACKING CONTEXT === */
+    .stacking {
+      position: relative;
+      height: 200px;
+    }
+
+    .box1, .box2 {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+
+    .box1 {
+      background: blue;
+      z-index: 1;
+    }
+
+    .box2 {
+      background: red;
+      left: 80px;
+      z-index: 2; /* Higher index = on top */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS Concepts Demo</h1>
+
+  <div id="intro">
+    <p>This page demonstrates Flexbox, Grid, Pseudo-elements, Pseudo-classes, Backgrounds, Colors, Selectors, and Z-Index.</p>
+  </div>
+
+  <div class="section">
+    <h2>Color Examples</h2>
+    <div class="color-boxes">
+      <div class="named-color">Tomato</div>
+      <div class="hex-color">#3498db</div>
+      <div class="rgb-color">rgb</div>
+      <div class="rgba-color">rgba</div>
+      <div class="hsl-color">hsl</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Background Example</h2>
+    <div class="background-example">Background Image</div>
+  </div>
+
+  <div class="section">
+    <h2>Flexbox Layout</h2>
+    <div class="flex-container">
+      <div class="flex-item">Flex 1</div>
+      <div class="flex-item">Flex 2</div>
+      <div class="flex-item">Flex 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Grid Layout</h2>
+    <div class="grid-container">
+      <div class="grid-item">Grid 1</div>
+      <div class="grid-item">Grid 2</div>
+      <div class="grid-item">Grid 3</div>
+      <div class="grid-item">Grid 4</div>
+      <div class="grid-item">Grid 5</div>
+      <div class="grid-item">Grid 6</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Pseudo-classes & Pseudo-elements</h2>
+    <p>This paragraph uses <code>::first-letter</code> and <code>::selection</code>.</p>
+    <a href="https://www.geeksforgeeks.org/" target="_blank">Hover or visit this link</a>
+  </div>
+
+  <div class="section">
+    <h2>Stacking Context (Z-Index)</h2>
+    <div class="stacking">
+      <div class="box1">Blue</div>
+      <div class="box2">Red</div>
+    </div>
+  </div>
+
+</body>
+</html>

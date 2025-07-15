@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Units & Box Model Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    /* Pixel Example */
+    .pixel-box {
+      width: 200px;
+      height: 100px;
+      background-color: #ff9999;
+    }
+
+    /* Percentage Example */
+    .percent-parent {
+      width: 400px;
+      border: 1px dashed #444;
+    }
+    .percent-child {
+      width: 50%;
+      height: 50px;
+      background-color: #99ccff;
+    }
+
+    /* em vs rem */
+    html {
+      font-size: 16px;
+    }
+
+    .em-parent {
+      font-size: 20px;
+      border: 1px dashed #aaa;
+      padding: 10px;
+    }
+
+    .em-child {
+      font-size: 2em;
+      margin: 1.5em;
+      background-color: #d5f5e3;
+    }
+
+    .rem-child {
+      font-size: 2rem;
+      margin: 1.5rem;
+      background-color: #fcf3cf;
+    }
+
+    /* vh/vw example */
+    .vhvw-box {
+      width: 50vw;
+      height: 30vh;
+      background-color: #f9c2ff;
+    }
+
+    /* Box model example */
+    .box-model {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      margin: 30px;
+      border: 5px solid #4a235a;
+      background-color: #aed6f1;
+    }
+
+    .box-note {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Units & Box Model Demo</h1>
+
+  <div class="section">
+    <h2>1️⃣ px (Pixels)</h2>
+    <div class="pixel-box">Fixed: 200px × 100px</div>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ % (Percentage)</h2>
+    <div class="percent-parent">
+      <div class="percent-child">Width: 50% of parent (400px)</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ em vs rem</h2>
+    <div class="em-parent">
+      Parent font-size: 20px
+      <div class="em-child">This is 2em (2× parent = 40px)</div>
+      <div class="rem-child">This is 2rem (2× root = 32px)</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ vh & vw (Viewport Units)</h2>
+    <div class="vhvw-box">50vw width × 30vh height</div>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ CSS Box Model</h2>
+    <div class="box-model">
+      Content inside box <br>
+      (200px width + 20px padding + 5px border + 30px margin)
+    </div>
+    <div class="box-note">
+      <strong>Total width:</strong> 200 + 2×20 (padding) + 2×5 (border) = 250px  
+      <br>
+      <strong>Total height:</strong> 100 + 2×20 + 2×5 = 150px
+    </div>
+  </div>
+
+</body>
+</html>
